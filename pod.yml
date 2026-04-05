@@ -1,0 +1,9 @@
+apiVersion: V1
+kind: Pod
+metadata:
+  name: anil-first-pod
+  label: practice-pods
+spec:
+  containers:
+    name: nginx-container
+    image: nginx
