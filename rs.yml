@@ -14,7 +14,7 @@ spec:
 
   template:
     metadata: 
-      name: anil-first-pod
+      name:
       labels: 
         app: practice-pods
         env: production
