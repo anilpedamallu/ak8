@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis_pod
+  labels:
+    app: redis_app
+    type: backend
+
+spec:
+  containers:
+  - name: redis
+    image: redis:alpine
+    port:
+      - containerPort: 6379
+        name: redis
