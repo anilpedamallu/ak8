@@ -13,7 +13,7 @@ try:
     # Run git push
     subprocess.run(["git", "push"], check=True)
 
-    print("=== Git Operation Success ===")
+    print("=== Git PUSH Success ===")
 
 except subprocess.CalledProcessError:
-    print("=== Git Operation Failed ===")
+    print("=== Git PULL Failed ===")
