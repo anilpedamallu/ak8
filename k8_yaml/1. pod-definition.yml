@@ -1,0 +1,31 @@
+apiVersion: v1      # string
+kind: Pod           # string
+metadata:           # dictionary 
+  name: nginx       # must and could be any unique name
+  labels:           # must  
+    app: myapp      # custom application name // must
+    tier: frontend
+    env: production
+spec:
+  containers:               # list of objects // name of the container within the POD // there could be multiple containers in a pod
+  - name: nginx             # any name which makes sense to you // first element of the list
+    image: nginx            # docker hub image name // or the fullname of the image in that image-repository.
+ 
+  - name: abc_any_name       # second object of the list
+    image: image_from_repo
+
+
+# To create pod: 
+# kubectl create -f pod.yaml (or) 
+# kubectl apply -f pod.yaml      // APPLY is used when any changes are done on yaml file.
+
+# To get status of pod:
+# kubectl get pods
+
+# To get details of pod:
+# kubectl describe pod nginx
+
+# another way to create a pod without yaml is
+# kubectl run nginx --image=nginx
+
+# kubectl run --help

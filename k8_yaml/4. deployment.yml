@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels: 
+        app: myapp
+        type: frontend
+    spec:
+      containers:
+      - name: redis
+        image: redis    
+  replicas: 3
+  selector:
+    matchLabels:            # this label is directly matched with the metadata-labels on the pod.
+      type: frontend        # whatever LABEL is there in POD, that should be mentioned here.
+
+
+
+
+
+# command to create a definition file
+# kubectl create -f deployment.yaml
+
+# when changes are done on the yaml file
+# kubectl apply -f deploymemnt-definition.yaml
+
+# command to see deployments
+# kubectl get deployments
+
+# deployment automatically creates replica-sets, command to see rs is
+# kubectl get replicaset
+
+# kubectl get deploy
+# kubectl get all
+
+# kubectl create deployment --help
+
+# sample creation of deployment using command
+# kubectl create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=3

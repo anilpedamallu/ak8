@@ -1,0 +1,19 @@
+# commands:
+
+# to view deployments, run below command
+# kubectl get deployments
+
+# to update the deployment-definition file, run below command
+# kubectl apply -f deployment-definition.yaml
+
+# if you want to set image in the deployment-definition file:
+# kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1
+
+# to see the status of rollout
+# kubectl rollout status deployment/myapp-deployment 
+
+# to rollback the deployment operation
+# kubectl rollout undo deployment/myapp-deployment
+
+# to see the deloyment history  
+# kubectl rollout history deployment/myapp-deployment

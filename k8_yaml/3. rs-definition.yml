@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: myapp-rs
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels: 
+        app: myapp
+        env: production
+        type: frontend
+    spec:
+      containers: 
+      - name: redis
+        image: redis    
+  replicas: 3
+  
+  selector:
+    matchLabels:            # this label is directly matched with the metadata-labels on the pod.
+      type: frontend        # whatever LABEL is there in POD, that should be mentioned here.
+    
+
+
+
+# if REPLICAS has changed to 6 in yaml,then run below command
+# kubectl replcae -f rs-definition.yaml
+# (or)
+# kubectl scale --replicas=6 -f rs-definition.yaml          <<--- this will not uodate the yaml file to 6
+# (or)
+# kubectl scale --replicas=6 replicaset myapp-rs            <<--- this will not uodate the yaml file to 6

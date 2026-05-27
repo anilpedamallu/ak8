@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service 
+
+
+spec:
+  type: NodePort
+  ports:
+  - targetPort: 80      # if this is not defined, it will assume the value is the same as 'port' value
+    port: 80            # must
+    nodePort: 30008     # 30,000 - 32,767, if it is not defines any number from the range is automatically allocated.
+  
+  # this is to specify to which POD we are assigning the ports
+  selector:
+    app: myapp          # this is the metadata content in a pod definition file under lables.
+    type: front-end     # this is the metadata content in a pod definition file under lables.
+
+
+
+# to create SERVICE
+# kubectl create -f service-definition.yaml
+
+# to see list of SERVICES created
+# kubectl get services
+

@@ -1,0 +1,2 @@
+imperative -- giving step by step instructions
+declarative -- giving the target, declare final target. system will decide the approach 

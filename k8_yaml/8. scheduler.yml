@@ -1,0 +1,10 @@
+# if a pod does not get assigned to a NODE it will be in PENDING state. K8 will identify those and assigns node to the pods, you won't be able to assign a NODE to
+# already created POD so it can be acheived by creating a binding object and send a post req to pod's binding api (which is what mimiking what scheduler does)
+
+# practically you will be creating a definition.yml object + pod-bind-definition.yml object
+
+# sample post request to binding api:
+# curl --header "Content-Type:application/json" --request POST --data '{"apiVersion" : "V1", ....} http://$SERVER/api/vi/namespace/default/pods/$PODNAME/binding/ 
+
+
+

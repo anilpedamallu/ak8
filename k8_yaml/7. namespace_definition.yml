@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev           # whichever name you want to specify
+
+
+
+
+# one way to create a namespace
+# kubectl create -f namespace_definition.yml
+
+# another way
+# kubectl create namespace <dev>
+
