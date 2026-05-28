@@ -1,0 +1,18 @@
+# kubectl api-resources
+# kubectl explain pods
+
+
+
+exposing a existing pod on a particular port:
+# kubectl expose pod redis --port=6379 --name=redis-service --type=ClusterIP
+
+creating deployment using command by passing values:
+# kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3
+
+below command will create a pod and a service too
+# kubectl run httpd --image=httpd:alpine --port=80 --expose
+
+kubectl describe pod -- ??????
+kubectl describe vs explain -- ????
+
+

@@ -14,18 +14,23 @@ spec:
   - name: abc_any_name       # second object of the list
     image: image_from_repo
 
-
-# To create pod: 
+ 
 # kubectl create -f pod.yaml (or) 
 # kubectl apply -f pod.yaml      // APPLY is used when any changes are done on yaml file.
 
-# To get status of pod:
-# kubectl get pods
-
-# To get details of pod:
-# kubectl describe pod nginx
 
 # another way to create a pod without yaml is
-# kubectl run nginx --image=nginx
+# kubectl run nginx --image=nginx  // simple way to create object
 
-# kubectl run --help
+
+# EDIT command
+# kubectl edit pod abc_pod       
+# already pod create ayyindi but here manam image name or something edit chestunaam.
+# ikkada oka k8 memory file lo oka yaml create ayyi live pod meeda changes apply avtaay
+# but actual yaml remains same.
+# so EDIT command use chesi then again, replace command use cheste better, yaml lo kooda changes apply avtay.
+# kubectl replace -f abc_pod.yml 
+
+# commands: https://learn.kodekloud.com/user/courses/cka-certification-course-certified-kubernetes-administrator/module/c6d2ac7d-8192-4cff-aa54-e36d888c5bd9/lesson/7814bc96-9352-4348-82f0-783f19cde47b
+
+# kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis_pod.yml
