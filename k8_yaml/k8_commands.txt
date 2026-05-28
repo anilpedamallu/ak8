@@ -16,3 +16,5 @@ kubectl describe pod -- ??????
 kubectl describe vs explain -- ????
 
 
+this is used to change node without deleting the pod. before hitting this command, make necessary changes in definition file.
+# kubectl replace --force -f pod.yaml
