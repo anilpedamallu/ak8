@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+
+data:
+  app-color: blue
+  app-mode: production
+
+
+# to create it. 
+# kubectl create -f config-maps.yml  
+
+
+# kubectl get configmaps
+# kubectl describe configmaps

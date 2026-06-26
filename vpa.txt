@@ -1,0 +1,12 @@
+VPA (3 components)
+1. VPA admission controller:
+this will create a pod which got evicted by updator and takes info from recommender and then apply memory and cpu to the pods. 
+
+2. VPA updator:
+it gets info from recommender and if it sees that pod is beyond threshold it will evicts the pod. 
+
+3. VPA recommender:                 
+continously monitors resource metrics from metric server and collects historical and live usage data and provides recommendations on optimal cpu and memory values.
+
+
+

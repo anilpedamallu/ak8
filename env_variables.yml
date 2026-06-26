@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-sleeper
+  
+spec:
+  containers:
+  - name: nginx-sleeper
+    image: nginx-sleeper
+    ports:
+      - containerPort: 8080         # sample port
+    
+    # env:                          # 1. plain text
+    #   - name: app-color           
+    #     value: green 
+    
+
+    # env:                          # 2. config maps
+    #   - name:           
+    #     valueFrom:    
+    #       ConfigMapKeyRef:           
+    
+
+    # env:                           # 3. secrets
+    #   - name:            
+    #     value:         
+    #       SecretKeyRef 
+
+
+# below is example copied from another file for reference.
+    spec:
+      containers:
+      - env:
+        - name: APP_COLOR               # this could be any name.
+          valueFrom:
+          configMapKeyRef:
+            name: webapp-config-map     # the name with which configmap is created earlier.
+            key: APP_COLOR              # existing key name ento ivvali ikkada.

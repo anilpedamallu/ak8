@@ -1,0 +1,17 @@
+developers have their own repository
+developers will push the developed code to the repository
+
+devops team will containerize that project by writing a multi stage docker file.
+devops team will create kubernetes manifests file -- deployments // services // ingress.
+devops team will setup CI - team will use github actions to implement CI. 
+devops will implement CD - team will use gitops (argocd) to implement continous continous delivery.
+
+devops will also setup kubernetes cluster. (target platform is eks - k8 cluster)
+devops will also setup HELP chart for the development team. so that developers only can create yaml files for other environments.
+
+devops will also setup ingress controller configuration. this will create a LB.
+
+===========================================================================================================================================
+
+
+  
